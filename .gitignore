@@ -1,0 +1,39 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# PyTorch checkpoints / model weights
+*.pth
+checkpoints/
+
+#unwanted files
+basic_preprocessing.ipynb
+breakhis_data
+
+# Data files and datasets
+*.tar.gz
+*.zip
+breakhis_dataset/
+
+# Matplotlib / plotting files
+*.png
+visualizations/
+
+# Log files
+*.log
+*.out
+
+# System files
+.DS_Store
+Thumbs.db
+
+# PyTorch Lightning or WandB logs (if any)
+lightning_logs/
+wandb/
