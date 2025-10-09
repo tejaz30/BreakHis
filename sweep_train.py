@@ -48,16 +48,7 @@ val_test_transform = transforms.Compose([
 # Split data into training, validation, and test sets
 
 # Only training rows
-train_data_full = data[data['grp'] == "train"]
-
-# Split
-train_df, val_df = train_test_split(
-    train_data_full,
-    test_size=0.2,
-    stratify=train_data_full['filename'].apply(lambda x: x.split('/')[3]),
-    random_state=42
-)
-train_df['label'] = train_df['filename'].apply(lambda x: x.split('/')[3])
+train_df = data[data['grp'] == "train"]
 
 
 # Test set from CSV
@@ -73,13 +64,15 @@ def train_one_mag(config=None):
             data=train_df,
             root_dir=root_dir, 
             mag=config.mag,
+            fold = [1,2,3,4],
             transform= train_transform
         )
         
         val_dataset_mag = BreakHisDataset(
-            data=val_df, 
+            data=train_df, 
             root_dir=root_dir, 
             mag=config.mag,
+            fold = 5,
             transform= val_test_transform
         )
         

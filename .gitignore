@@ -16,6 +16,7 @@ checkpoints/
 #unwanted files
 basic_preprocessing.ipynb
 breakhis_data
+resnet20_breakhis.py
 
 # Data files and datasets
 *.tar.gz
@@ -24,7 +25,6 @@ breakhis_dataset/
 
 # Matplotlib / plotting files
 *.png
-visualizations/
 
 # Log files
 *.log

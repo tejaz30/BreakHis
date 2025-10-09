@@ -43,7 +43,7 @@ class ResNet20(nn.Module):
         self.layer3 = self._make_layer(64, 3, stride=2)
 
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
-        self.fc = nn.Linear(64, num_classes)  # 🔁 MODIFIED: 64 → 2 for binary classification
+        self.fc = nn.Linear(64, num_classes)  #  MODIFIED: 64 → 2 for binary classification
 
     def _make_layer(self, planes, num_blocks, stride):
         strides = [stride] + [1]*(num_blocks - 1)
