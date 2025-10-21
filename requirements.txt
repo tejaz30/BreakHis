@@ -1,5 +1,7 @@
 torch
 torchvision
+timm
+transformers
 pandas
 pillow
 seaborn

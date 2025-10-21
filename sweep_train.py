@@ -14,7 +14,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Read CSV
 data = pd.read_csv('breakhis_data/Folds.csv')
 
-# Clean 'mag' column so it's always int (e.g., "100X" → 100)
+# Converting the mag column in the csv file (e.g., "100X" → 100)
 data['mag'] = data['mag'].astype(str).str.replace('X', '', regex=False).str.strip().astype(int)
 
 # Dataset directory
@@ -43,9 +43,6 @@ val_test_transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean, std)
 ])
-
-
-# Split data into training, validation, and test sets
 
 # Only training rows
 train_df = data[data['grp'] == "train"]
@@ -179,4 +176,4 @@ sweep_config = {
 
 #  Create sweep
 sweep_id = wandb.sweep(sweep_config, project="breakhis-magnification")
-wandb.agent(sweep_id, function=train_one_mag)
+wandb.agent(sweep_id, function=train_one_mag) 

@@ -55,3 +55,4 @@ class BreakHisDataset(Dataset):
         label = row['label_int']
         return image, label
 
+

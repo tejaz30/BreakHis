@@ -37,3 +37,9 @@ Thumbs.db
 # PyTorch Lightning or WandB logs (if any)
 lightning_logs/
 wandb/
+
+#unwanted files
+resnet20_breakhis.py
+baseline.py
+dataset/
+additional/
